@@ -138,9 +138,19 @@
 <h4>Syntax: select * from <mark>tablename</mark></h4>
 <h5> Where "*" mean all records and feilds(rows & colums)</h5>
 
-<h4> if you want to find any data from the table with the help of id or any other feild(column) then.<br>Syntax: select <mark>name_of_searching_column</mark> from <mark>table_name</mark> where <mark>name_of_the_hint(like id,name,contact no)</mark> = 4;</h4>
+<h3>6.1) Uses of WHERE Clause in MySql<h3>
+<h4> if you want to find any data from the table with the help of id or any other feild(column) then.<br>Syntax: select <mark>name_of_searching_column</mark> from <mark>table_name</mark> where <mark>name_of_the_hint or query(like id,name,contact no)</mark> = <mark>single_record</mark></h4>
 
+<h4>Example1: select name from students where id = 3;</h4>
+<h4>Example2: select name, class from students where id = 2;</h4>
+<h4>Example3: select name, class, roll_no from students where id = 4;</h4>
+<h4>Example4: select name, class, roll_no, school_name from students where id = 1;</h4>
 
+<h4>Example5: select name from students where roll_no = 10;</h4>
+
+<h4>Example6: select name, from students where shcool_name = "janakpur school";</h4>
+
+<h4>Example: select school_name from students where name = "rabi";</h4>
 
 <h3>7) For showing the Error & warnings</h3>
 <h4>Syntax: show warnings;<br>Syntax: show errors;</h4>
