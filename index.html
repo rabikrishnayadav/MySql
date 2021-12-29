@@ -1,171 +1,120 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Mysql</title>
-</head>
-<body>
-<h1 align="center">Learn Mysql</h1>
-<hr>
-<h3>1) check the mysql version</h3>
-<h4>Syntax: mysql &nbsp;--version</h4>
-
-<h3>2) Connect mysql with the databases<br>
-<h4>Syntax: mysql &nbsp; -u &nbsp; root &nbsp; -p &nbsp;-h &nbsp; localhost</h4> 
-<h5>where -u: user name, -p: password, -h: host name</h5>
-</h3>
-
-<h3>3) For showing the list of the databases</h3>
-<h4>Syntax: show databases;</h4>
-
-<h3>4) For Creating new database</h3>
-<h4>Syntax: create database <mark>nameofdatabase</mark>;</h4>
-
-<h3>5) For Selecting the database</h3>
-<h4>Syntax: use <mark>databasename</mark>;</h4>
-
-<h3>6) For showing(know) which database is curently selected</h3>
-<h4>Syntax: select database();</h4>
-<hr>
-<h2>Data Type in Mysql</h2>
-
-<ol type="I">
-	<li>Numric Types</li>
-	<ol type="1">
-		<li>INT</li>
-		<li>SMALLINT</li>
-		<li>TINYINT</li>
-		<li>MEDIUMINT</li>
-		<li>BIGINT</li>
-		<li>DECIMAL</li>
-		<li>NUMERIC</li>
-		<li>FLOAT</li>
-		<li>DOUBLE</li>
-		<li>BIT</li>
-	</ol>
-	<li>String Types</li>
-	<ol type="1">
-		<li>CHAR</li>
-		<li>VARCHAR</li>
-		<li>BINARY</li>
-		<li>VARBINARY</li>
-		<li>BLOB</li>
-		<li>TINYBLOB</li>
-		<li>MEDIUMBLOB</li>
-		<li>LONGBLOB</li>
-		<li>TEXT</li>
-		<li>TINYTEXT</li>
-		<li>MEDIUMTEXT</li>
-		<li>LONGTEXT</li>
-		<li>ENUM</li>
-	</ol>
-	<li>Data and Time</li>
-	<ol type="1">
-		<li>DATE</li>
-		<li>DATETIME</li>
-		<li>TIMESTAMP</li>
-		<li>TIME</li>
-		<li>YEAR</li>
-	</ol>
-</ol>
-<hr>
-<h2>All about tables</h2>
-<h3>1) For creating a new table</h3>
-<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type,<br> column_name &nbsp; data_type<br>);</h4>
-
-<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50),<br> class &nbsp; int,<br>roll_no &nbsp; int, <br> school_name &nbsp; varchar(100)<br>);</h4>
-
-
-<h3>1.1) create table which feilds value are not insert NULL condition</h3>
-
-<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null,<br> column_name &nbsp; data_type &nbsp; not null<br>);</h4>
-
-<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null,<br> class &nbsp; int &nbsp; not null,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null<br>);</h4>
-
-
-<h3>1.2) What is DEFAULT how to use it</h3>
-<h5>when we are inserting(adding) the data(records) into to column(feilds).<br> at that time if we do not add any feild value then by default which value will store in that column(feild). <br>for that we use default value. <br> Default value will store in database when we do not insert any fild value at the inserting other feild value time.</h5>
-
-<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark><br>);</h4>
-
-<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school"<br>);</h4>
-
-
-<h3>1.3) What is primary key in table. how to use</h3>
-<h5>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>Primary key must contain UNIQUE values, and can not contain NULL Values.</h5>
-
-
-<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
-
-<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
-
-<h3>1.4)What is AUTO_INCREMENT in Table and how to use</h3>
-
-<h5>Auto Increment allows a unique number to be generated automatically when a new record(data) is inserted into a table</h5>
-
-
-<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> auto_increment,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
-
-<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null auto_increment,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
-
-
-<h3>2) For showing the list of the tables</h3>
-<h4>Syntax: show tables;</h4>
-
-
-<h3>3) For showing the feilds(columns) of the table</h3>
-<h4>Syntax:<br>Method 1: desc <mark>tablename</mark>;<br>Method 2: show columns from <mark>tablename</mark>;</h4>
-
-
-<h3>4) For Delete the table</h3>
-<h4>Syntax: drop table <mark>tablename</mark>;</h4>
-
-
-<h3>5) For inserting the data(Records) into the tables</h3>
-<h5>If you don't want to fill all the column data into the table then use this</h5>
-<h4>Syntax: insert into <mark>tablename</mark>(column1, column2, column3,...) values(value1, value2, value3,...);</h4>
-
-<h5>If you want to insert all data with all columns then you can directly use this</h5>
-<h4>Syntax: insert into <mark>tablename</mark> values(value1, value2, value3,..);</h4>
-
-<h4>Example: insert into students(name, class, roll_no, school_name) values("rabi", 10, 2, "pipara school");</h4>
-
-<h4>Example: insert into students values("rabi", 10, 2, "pipara school");</h4>
-
-
-<h3>6) For showing the data(Record) inside the tables</h3>
-<h4>Syntax: select * from <mark>tablename</mark></h4>
-<h5> Where "*" mean all records and feilds(rows & colums)</h5>
-
-<h3>6.1) Uses of WHERE Clause in MySql<h3>
-<h4> if you want to find any data from the table with the help of id or any other feild(column) then.<br>Syntax: select <mark>name_of_searching_column</mark> from <mark>table_name</mark> where <mark>name_of_the_hint or query(like id,name,contact no)</mark> = <mark>single_record</mark></h4>
-
-<h4>Example1: select name from students where id = 3;</h4>
-<h4>Example2: select name, class from students where id = 2;</h4>
-<h4>Example3: select name, class, roll_no from students where id = 4;</h4>
-<h4>Example4: select name, class, roll_no, school_name from students where id = 1;</h4>
-
-<h4>Example5: select name from students where roll_no = 10;</h4>
-
-<h4>Example6: select name, from students where shcool_name = "janakpur school";</h4>
-
-<h4>Example: select school_name from students where name = "rabi";</h4>
-
-<h3>7) For showing the Error & warnings</h3>
-<h4>Syntax: show warnings;<br>Syntax: show errors;</h4>
-
-
-<h3>8) For add new column(feild) into the table</h3>
-
-<h4>Syntax: alter table <mark>tablename</mark>&nbsp; add<mark>&nbsp; column_name</mark>&nbsp; data_type;</h4>
-
-<h3>9) For Delete the column(feild) from the table</h3>
-
-<h4>Syntax: alter table <mark>table_name</mark> drop column <mark>column_name</mark>;</h4>
-
-
-
-
-</body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mysql</title>
+	</head>
+	<body>
+		<h1 align="center">Learn Mysql</h1>
+		<hr>
+		<h3>1) check the mysql version</h3>
+		<h4>Syntax: mysql &nbsp;--version</h4>
+		<h3>2) Connect mysql with the databases<br>
+		<h4>Syntax: mysql &nbsp; -u &nbsp; root &nbsp; -p &nbsp;-h &nbsp; localhost</h4>
+		<h5>where -u: user name, -p: password, -h: host name</h5>
+		</h3>
+		<h3>3) For showing the list of the databases</h3>
+		<h4>Syntax: show databases;</h4>
+		<h3>4) For Creating new database</h3>
+		<h4>Syntax: create database <mark>nameofdatabase</mark>;</h4>
+		<h3>5) For Selecting the database</h3>
+		<h4>Syntax: use <mark>databasename</mark>;</h4>
+		<h3>6) For showing(know) which database is curently selected</h3>
+		<h4>Syntax: select database();</h4>
+		<hr>
+		<h2>Data Type in Mysql</h2>
+		<ol type="I">
+			<li>Numric Types</li>
+			<ol type="1">
+				<li>INT</li>
+				<li>SMALLINT</li>
+				<li>TINYINT</li>
+				<li>MEDIUMINT</li>
+				<li>BIGINT</li>
+				<li>DECIMAL</li>
+				<li>NUMERIC</li>
+				<li>FLOAT</li>
+				<li>DOUBLE</li>
+				<li>BIT</li>
+			</ol>
+			<li>String Types</li>
+			<ol type="1">
+				<li>CHAR</li>
+				<li>VARCHAR</li>
+				<li>BINARY</li>
+				<li>VARBINARY</li>
+				<li>BLOB</li>
+				<li>TINYBLOB</li>
+				<li>MEDIUMBLOB</li>
+				<li>LONGBLOB</li>
+				<li>TEXT</li>
+				<li>TINYTEXT</li>
+				<li>MEDIUMTEXT</li>
+				<li>LONGTEXT</li>
+				<li>ENUM</li>
+			</ol>
+			<li>Data and Time</li>
+			<ol type="1">
+				<li>DATE</li>
+				<li>DATETIME</li>
+				<li>TIMESTAMP</li>
+				<li>TIME</li>
+				<li>YEAR</li>
+			</ol>
+		</ol>
+		<hr>
+		<h2>All about tables</h2>
+		<h3>1) For creating a new table</h3>
+		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type,<br> column_name &nbsp; data_type<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50),<br> class &nbsp; int,<br>roll_no &nbsp; int, <br> school_name &nbsp; varchar(100)<br>);</h4>
+		<h3>1.1) create table which feilds value are not insert NULL condition</h3>
+		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null,<br> column_name &nbsp; data_type &nbsp; not null<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null,<br> class &nbsp; int &nbsp; not null,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null<br>);</h4>
+		<h3>1.2) What is DEFAULT how to use it</h3>
+		<h5>when we are inserting(adding) the data(records) into to column(feilds).<br> at that time if we do not add any feild value then by default which value will store in that column(feild). <br>for that we use default value. <br> Default value will store in database when we do not insert any fild value at the inserting other feild value time.</h5>
+		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark><br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school"<br>);</h4>
+		<h3>1.3) What is primary key in table. how to use</h3>
+		<h5>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>Primary key must contain UNIQUE values, and can not contain NULL Values.</h5>
+		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
+		<h3>1.4)What is AUTO_INCREMENT in Table and how to use</h3>
+		<h5>Auto Increment allows a unique number to be generated automatically when a new record(data) is inserted into a table</h5>
+		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> auto_increment,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null auto_increment,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
+		<h3>2) For showing the list of the tables</h3>
+		<h4>Syntax: show tables;</h4>
+		<h3>3) For showing the feilds(columns) of the table</h3>
+		<h4>Syntax:<br>Method 1: desc <mark>tablename</mark>;<br>Method 2: show columns from <mark>tablename</mark>;</h4>
+		<h3>4) For Delete the table</h3>
+		<h4>Syntax: drop table <mark>tablename</mark>;</h4>
+		<h3>5) For inserting the data(Records) into the tables</h3>
+		<h5>If you don't want to fill all the column data into the table then use this</h5>
+		<h4>Syntax: insert into <mark>tablename</mark>(column1, column2, column3,...) values(value1, value2, value3,...);</h4>
+		<h5>If you want to insert all data with all columns then you can directly use this</h5>
+		<h4>Syntax: insert into <mark>tablename</mark> values(value1, value2, value3,..);</h4>
+		<h4>Example: insert into students(name, class, roll_no, school_name) values("rabi", 10, 2, "pipara school");</h4>
+		<h4>Example: insert into students values("rabi", 10, 2, "pipara school");</h4>
+		<h3>6) For showing the data(Record) inside the tables</h3>
+		<h4>Syntax: select * from <mark>tablename</mark></h4>
+		<h5> Where "*" mean all records and feilds(rows & colums)</h5>
+		<h3>6.1) Uses of WHERE Clause in MySql<h3>
+		<h4> if you want to find any data from the table with the help of id or any other feild(column) then.<br>Syntax: select <mark>name_of_searching_column</mark> from <mark>table_name</mark> where <mark>name_of_the_hint or query(like id,name,contact no)</mark> = <mark>single_record</mark></h4>
+		<h4>Example1: select name from students where id = 3;</h4>
+		<h4>Example2: select name, class from students where id = 2;</h4>
+		<h4>Example3: select name, class, roll_no from students where id = 4;</h4>
+		<h4>Example4: select name, class, roll_no, school_name from students where id = 1;</h4>
+		<h4>Example5: select name from students where roll_no = 10;</h4>
+		<h4>Example6: select name, from students where shcool_name = "janakpur school";</h4>
+		<h4>Example: select school_name from students where name = "rabi";</h4>
+		<h3>7) For showing the Error & warnings</h3>
+		<h4>Syntax: show warnings;<br>Syntax: show errors;</h4>
+		<h3>8) For add new column(feild) into the table</h3>
+		<h4>Syntax: alter table <mark>tablename</mark>&nbsp; add<mark>&nbsp; column_name</mark>&nbsp; data_type;</h4>
+		<h3>9) For Delete the column(feild) from the table</h3>
+		<h4>Syntax: alter table <mark>table_name</mark> drop column <mark>column_name</mark>;</h4>
+		<hr>
+		<h1>CRUD Operation (C=Create, R=Read, U=Update, D=Delete)</h1>
+	</body>
 </html>
