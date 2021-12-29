@@ -164,7 +164,20 @@
 				<li>Syntax:<br>delete from <abbr title="database_name"><mark>students</mark></abbr> where <abbr title="searching_column_name">id</abbr> = <abbr title="searching record">2</abbr></li>
 			</ol>
 		</ul>
-		<<hr>
+		<hr>
+		<h2>SQL Aggregate Functions</h2>
+
+		<ul>
+			<li>COUNT( )</li>this function returns the number if row that matches a specified criteria.<br>
+			1) Syntax: select count(age) from <abbr title="database_name"><mark>students</mark></abbr>;<br>
+			2) Syntax: select count(id) as students from <abbr title="database_name"><mark>students</mark></abbr>;
+			<li>MAX( )</li>Syntax: select max(age) from <abbr title="database_name"><mark>students</mark></abbr>;
+			<li>MIN( )</li>Syntax: select min(age) from <abbr title="database_name"><mark>students</mark></abbr>;
+			<li>AVG( )</li>This function returns the average value of a numeric column.<br>
+			Syntax: select avg(age) from <abbr title="database_name"><mark>students</mark></abbr>;
+			<li>SUM( )</li>This function returns the total sum of a numric column.<br>
+			Syntax: select sum(age) from <abbr title="database_name"><mark>students</mark></abbr>;
+		</ul>
 
 
 	</body>
