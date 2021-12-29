@@ -188,7 +188,20 @@
 
 		<h4>Syntax: select <abbr title="column_name"> age </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">age</abbr> desc;</h4>
 
+		<hr>b
+		<h3>DISTINCT & LIMIT keyword</h3>
+		<ul>
+			<li>DISTINCT</li>This keyword is use for show only unmach data with other data. With this keyword it will not show repeated data.<br>Syntax: select distinct fname from <abbr title="table name">students</abbr>;
+			<br>Syntax: select distinct lname from <abbr title="table name">students</abbr>;
+			<br>Syntax: select distinct age from <abbr title="table name">students</abbr>;
+			<li>LIMIT</li>This keyword is use for set the limit of the data show.<br>Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> limit 5;
 
+			<br>Syntax: select <abbr title="column name"><mark>fname</mark></abbr> from <abbr title="table name"><mark>students</mark></abbr> limit 3;
+
+			<br>Syntax: select <abbr title="column name"><mark>age</mark></abbr> from <abbr title="table name"><mark>students</mark></abbr> limit 4;
+
+			<br>Syntax: select <abbr title="column name"><mark>fname, lname</mark></abbr> from <abbr title="table name"><mark>students</mark></abbr> order by fname limit 6;
+		</ul>
 
 
 
