@@ -74,15 +74,17 @@
 		<h3>1.2) What is DEFAULT how to use it</h3>
 		<h5>when we are inserting(adding) the data(records) into to column(feilds).<br> at that time if we do not add any feild value then by default which value will store in that column(feild). <br>for that we use default value. <br> Default value will store in database when we do not insert any fild value at the inserting other feild value time.</h5>
 		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark><br>);</h4>
-		<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school"<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; default "janakpur school"<br>);</h4>
 		<h3>1.3) What is primary key in table. how to use</h3>
 		<h5>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>Primary key must contain UNIQUE values, and can not contain NULL Values.</h5>
 		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark>,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
-		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
+		
+		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
+		
 		<h3>1.4)What is AUTO_INCREMENT in Table and how to use</h3>
 		<h5>Auto Increment allows a unique number to be generated automatically when a new record(data) is inserted into a table</h5>
 		<h4>Syntax: create table <mark>tablename</mark><br>(<br>column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> auto_increment,<br> column_name &nbsp; data_type &nbsp; not null &nbsp; default <mark>value</mark> primary key(<mark>column_name</mark>)<br>);</h4>
-		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null auto_increment,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
+		<h4>Example:&nbsp; create table students<br>(<br>id &nbsp; int &nbsp; not null auto_increment,<br>name &nbsp; varchar(50) &nbsp; not null &nbsp; default "unnamed",<br> class &nbsp; int &nbsp; not null &nbsp; default 1,<br>roll_no &nbsp; int &nbsp; not null, <br> school_name &nbsp; varchar(100) &nbsp; not null &nbsp; default "janakpur school" primary key(id)<br>);</h4>
 		<h3>2) For showing the list of the tables</h3>
 		<h4>Syntax: show tables;</h4>
 		<h3>3) For showing the feilds(columns) of the table</h3>
@@ -116,5 +118,54 @@
 		<h4>Syntax: alter table <mark>table_name</mark> drop column <mark>column_name</mark>;</h4>
 		<hr>
 		<h1>CRUD Operation (C=Create, R=Read, U=Update, D=Delete)</h1>
+
+		<<ul>
+			<li>Create</li>
+			<ol>
+				<li>create database<br>
+		Syntax:<br> create database <abbr title="database_name"><mark>school</mark></abbr>;</li>
+		<li>Create table<br>
+		Syntax:<br> create table <abbr title="table_name"><mark>students</mark></abbr> (<br>id int not null auto_increment,<br> fname varchar(55) not null,<br>lname varchar(55),<br>age int not null,<br> primary key(id)<br>);</li>
+		<li>Insert the value of the column inside the created table<br>
+			Syntax:<br> insert into table <abbr title="table_name"><mark>stundents</mark></abbr><br>(fname, lname, age)<br>values('rabi', 'yadav',25),<br>('krishna','mandal',23),<br>('krishna','yadav',28),<br>
+			('rabi','krishna',24),<br>('ram','khatri',29),<br>
+			('laxman', 'khatri',27),<br>('prem','yadav',22),<br>
+			('kiran','devi',32),<br>('binita','mandal',42),<br>('rakesh','kumar',35);</li>
+			</ol>
+
+			<li>Read</li>
+				<ol><h4>For show the list of databases</h4>
+					<li>Syntax: show databases;</li>
+					<h4>For show the current database which one is selected</h4>
+					<li>Syntax: show database();</li>
+					<h4>For show the tables inside the database</h4>
+					<li>Syntax: show tables;</li>
+					<h4>For filter the table data</h4>
+					<li>Syntax:<br>select <abbr title="all rows & column">*</abbr> from <abbr title="table_name"><mark>students;</mark></abbr></li>
+
+					<li>Syntax:<br>select age form students;</li>
+					<li>Syntax:<br>slect * from students where age = 25;</li>
+					<li>Syntax:<br>select fname, lname from students where age = 24;</li>
+					<li>Syntax:<br>select * from students where lname = "yadav";</li>
+
+				</ol>
+
+			<li>Update</li>
+
+			<ol> <h5>The Update statement is used to modify the existing records in a table.</h5>
+				<li>Syntax:<br> update <abbr title="table_name"><mark>students</mark></abbr> set <abbr title="column_name">age</abbr> = <abbr title="new value">21</abbr> where <abbr title="searching_column_name">fname</abbr>=<abbr title="searching record">"krishna"</abbr>;</li>
+
+				<li>Syntax:<br>update students set lname = "xetri" where fname = "ram";</li>
+			</ol>
+			
+			<li>Delete</li>
+
+			<ol><h5>The DELETE statement is used to delete existing records in a table.</h5>
+				<li>Syntax:<br>delete from <abbr title="database_name"><mark>students</mark></abbr> where <abbr title="searching_column_name">id</abbr> = <abbr title="searching record">2</abbr></li>
+			</ol>
+		</ul>
+		<<hr>
+
+
 	</body>
 </html>
