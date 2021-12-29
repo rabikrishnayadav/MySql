@@ -202,8 +202,46 @@
 
 			<br>Syntax: select <abbr title="column name"><mark>fname, lname</mark></abbr> from <abbr title="table name"><mark>students</mark></abbr> order by fname limit 6;
 		</ul>
+<hr>
+		<h3>LIKE Operator</h3>
+
+		<p>The LIKE operator is used in a WHERE Clause to search for a specified pattern in a column.<br>
+		There are two wildcards often used in conjunction with the like operator.</p>
+		<ul>
+			<li style="font-size: 20px;"><b>'%'</b></li>The percent sign represents zero,one or multiple characters<br>
+
+			Syntax: select <abbr title="all rows & columns">*</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>fname</mark></abbr> like "ra%";
+
+			<br> 
+
+			Syntax: select <abbr title="all rows & columns">*</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>fname</mark></abbr> like "%ab%";
+
+			<br>
+
+			Syntax: select <abbr title="name of column">fname, lname</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>fname</mark></abbr> like "ra%";
+
+			<br>
+
+			Syntax: select <abbr title="name of column">age</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>age</mark></abbr> like "%7";
 
 
+
+			<li style="font-size: 30px;"><b>'_'</b></li>The underscore represents a single character<br>
+
+			Syntax: select <abbr title="all rows & columns">*</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>lname</mark></abbr> like "_adav";
+
+			<br>
+
+			Syntax: select <abbr title="all rows & columns">*</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>lname</mark></abbr> like "_ada_";
+
+			<br> 
+
+			Syntax: select <abbr title="name of column">fname, lname</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>fname</mark></abbr> like "rab_";
+
+			<br>
+
+			Syntax: select <abbr title="name of column">age</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>age</mark></abbr> like "_7";
+		</ul>
 
 	</body>
 </html>
