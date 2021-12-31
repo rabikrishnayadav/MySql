@@ -305,10 +305,24 @@
 </p><br>
 <hr><br>
 
+<h3>MySQL Logical Operator</h3>
 
+The logical operators are those that true or false.<br>They return a true or false values to combine one or more true or false values.
+<ul>
+	<li>AND(&&)</li>The AND operator is used to compare data with more than one condition.<br>If all the conditions returns TRUE then only it will display records.<br>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for first condition"><mark>lname</mark></abbr> = <abbr title="record name of column for first condition"><mark>"yadav"</mark></abbr> and <abbr title="column name for second condition"><mark>age</mark></abbr> = <abbr title="record name of column for second condition"><mark>28</mark></abbr>;
+	<li>OR(||)</li> The OR Operator is used to compare data with more than one condition.<br>If either of condition is TRUE it will return data.<br>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for first condition"><mark>age</mark></abbr> > <abbr title="record name of column for first condition"><mark>20</mark></abbr> or <abbr title="column name for second condition"><mark>age</mark></abbr> < <abbr title="record name of column for second condition"><mark>30</mark></abbr>;
+	<li>BETWEEN</li>The BETWEEN operator is inclusive: begin and end values are included.<br>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for condition"><mark>age</mark></abbr> between <abbr title="record name of column for first condition"><mark>20</mark></abbr> and <abbr title="record name of column for second condition"><mark>30</mark></abbr>;
+	<li>IN</li>The IN operator is a shorthand for multiple OR conditions.<br>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for condition"><mark>fname</mark></abbr> in ('rabi','krishna','krish');
 
-
-
+	<li>NOT</li>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for condition"><mark>age</mark></abbr> not between <abbr title="record name of column for first condition"><mark>20</mark></abbr> and <abbr title="record name of column for second condition"><mark>30</mark></abbr>;<br>
+	Syntax: select * from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="column name for condition"><mark>fname</mark></abbr> not in ('rabi','krishna','krish');
+</ul>
+<br><hr><br>
 
 	</body>
 </html>
