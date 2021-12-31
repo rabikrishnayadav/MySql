@@ -179,16 +179,23 @@
 			Syntax: select sum(age) from <abbr title="table_name"><mark>students</mark></abbr>;
 		</ul>
 <br>
-		<h3>MySql ORDER BY Keyword</h3><hr>
+		<h3>MySql ORDER BY Keyword or GROUP BY Keyword</h3><hr>
+		<h4>ORDER BY Keyword:</h4>
 		<p>ORDER BY keyword is used to sort the result-set in ascending or descending order.</p>
 
-		<h4>Syntax: select <abbr title="all rows & cols"> * </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">fname</abbr>;</h4>
+		Syntax: select <abbr title="all rows & cols"> * </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">fname</abbr>;
+		<br>
+		Syntax: select <abbr title="column_name"> age </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">age</abbr>;
+		<br>
+		Syntax: select <abbr title="column_name"> age </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">age</abbr> desc;
+		<br>
+		<h4>GROUP BY Keyword</h4>
+		<p>The GROUP BY command is used to group the result set(used with aggregate function: COUNT,MAX,MIN,SUM,AVG).<br>
+		Syntax: select count(id), fname, lname, from students group by lname;<br>
+		Syntax: select count(id), fname, lname, from students group by lname order by desc;<br>
+		</p>
 
-		<h4>Syntax: select <abbr title="column_name"> age </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">age</abbr>;</h4>
-
-		<h4>Syntax: select <abbr title="column_name"> age </abbr> from <abbr title="table name">students</abbr> order by <abbr title="column name">age</abbr> desc;</h4>
-
-		<hr>b
+		<hr>
 		<h3>DISTINCT & LIMIT keyword</h3>
 		<ul>
 			<li>DISTINCT</li>This keyword is use for show only unmach data with other data. With this keyword it will not show repeated data.<br>Syntax: select distinct fname from <abbr title="table name">students</abbr>;
