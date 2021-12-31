@@ -242,6 +242,61 @@
 
 			Syntax: select <abbr title="name of column">age</abbr> from <abbr title="table name"><mark>students</mark></abbr> where <abbr title="searching data column name"><mark>age</mark></abbr> like "_7";
 		</ul>
+<hr>
+<br>
+<h3>MySql String Functions</h3>
+
+<p>
+	SQL String functions are used primarily for string manipulation.<br>
+	The following important string functions.
+	<ol>
+		<li>ASCII( )</li>Returns numeric value of left-most character
+		<li>BIN( )</li>Returns a string representation of the argument
+		<li>BIT_LENGTH( )</li>Returns length of argument in bits
+		<li>CHAR_LENGTH( )</li>Returns number of characters in argument<br>
+		Syntax: select <abbr title="column name"><mark>fname</mark></abbr>, char_length(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>studnets</mark></abbr>;
+		<li>CHAR( )</li>Returns the character for each integer passed
+		<li>CHARACTER_LENGTH( )</li>A synonym for CHAR_LENGTH( ).<br>
+		Syntax: select <abbr title="column name"><mark>fname</mark></abbr>, character_length(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>studnets</mark></abbr>;
+		<li>CONCAT_WS( )</li>Returns concatenate with separator.
+		<li>CONCAT( )</li>Returns concatenated string.<br>
+		Syntax: select concat(<abbr title="first table name"><mark>fname</mark></abbr>," ",<abbr title="second table name"><mark>lname</mark></abbr>) as Full_Name from <bbr title="Table name"><mark>students</mark></abbr>;
+		<li>CONV( )</li>Converts numbers between different number bases
+		<li>ELT( )</li>Returns string at index number
+		<li>EXPORT_SET( )</li>Returns a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string
+		<li>FIELD( )</li>Returns the index(position) of the first argument in the subsequent arguments.
+		<li>FIND_IN_SET( )</li>Returns the index position of the first argument within the second argument
+		<li>FORMAT( )</li>Returns a number formatted to specified number of decimal places
+		<li>HEX( )</li>Returns a string representation of a hex value
+		<li>INSERT( )</li>Inserts a substring at the specified position up to the specified number of characters
+		<li>INSTR( )</li>Returns the index of the first occurrence of substring
+		<li>LEFT( )</li>Returns the leftmost number of characters as specified
+		<li>LENGTH( )</li>Returns the length of a string in bytes
+		<li>LOAD_FILE( )</li>Loads the named file
+		<li>LOCATE( )</li>Returns the posotion of the first occurrence of substring
+		<li>UPPER( )</li>The upper() function converts a string to upper-case.<br>
+		Syntax: select upper(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>students</mark></abbr>; 
+		<li>LOWER( )</li>Returns the argument in lowercase<br>
+		Syntax: select lower(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>students</mark></abbr>;
+		<li>UCASE( )</li>Synonym fo UPPER( )<br>
+		Syntax: select ucase(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>students</mark></abbr>;
+		<li>LCASE( )</li>Synonym for LOWER( )<br>
+		Syntax: select lcase(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>students</mark></abbr>;
+		<li>REVERSE( )</li>The Reverse() function reverses a string and returns the result.<br>
+		Syntax: select reverse(<abbr title="column name"><mark>fname</mark></abbr>) from <abbr title="table name"><mark>students</mark></abbr>;
+		<li>REPLACE( )</li>The replace() function all occurrences of a substring within a string, with a new substring.<br>
+		Syntax: select replace("<abbr title="String">Rabi Kumar Yadav</abbr>","<abbr title="old substring">kumar</abbr>","<abbr title="New substring">krishna</abbr>");
+	</ol>
+</p>
+
+<br>
+<hr>
+<br>
+
+
+
+
+
 
 	</body>
 </html>
