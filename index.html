@@ -331,5 +331,24 @@ The logical operators are those that true or false.<br>They return a true or fal
 </ul>
 <br><hr><br>
 
+<h3>All About Date and Time Data Type</h3>
+Create Table Syntax:<br>create table <abbr title="table name"><mark>hosp</mark></abbr>(id int not null auto_increment primary key,<br>name varchar(100),<br>dob_date date,<br>dob_time time,<br>dob_datetime datetime);<br>
+
+<ul>
+	<li>DATE</li>Format: YYYY-MM-DD<br>Syntax: insert into hosp(name, dob_date) values('ram','1994-05-14');
+	<li>TIME</li>Format: HH:MM:SS<br>Syntax: insert into hosp(name, dob_time) values('ramesh','05:45:55');
+	<li>DATETIME</li>Format: YYYY-MM-DD HH:MM:SS<br>Syntax: insert into hosp(name, dob_datetime) values('radhe','1994-05-14 05:45:55');
+	<li>Some Predefine Functions</li>
+	<ol>
+		<li>CURDATE( )</li> Gives the current date, Format: YYYY-MM-DD<br>Syntax: insert into hosp(name, dob_date) values('ram', curdate());
+		<li>CURTIME( )</li>Gives the current time, Format: HH:MM:SS<br>Syntax: insert into hosp(name, dob_time) values('ramesh', curtime());
+		<li>NOW( )</li>Gives both currrent date and current time, Format: YYYY-MM-DD HH:MM:SS<br>Syntax: insert into hosp(name, dob_datetime) values('radhe', now());
+	</ol>
+</ul>
+
+<br><hr><br>
+
+
+
 	</body>
 </html>
