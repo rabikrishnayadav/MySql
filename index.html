@@ -348,7 +348,34 @@ Create Table Syntax:<br>create table <abbr title="table name"><mark>hosp</mark><
 
 <br><hr><br>
 
+<h3>Primary Key & Foreign Key</h3>
 
+<ul>
+	<li>Primary Key</li>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>
+	<mark>Primary Keys must contain UNIQUE values, and cannot contain NULL values.</mark><br>
+	Syntax1: create table customers(customer_id int not null auto_increment primary key, name varchar(50) not null, address varchar(150) not null default "janakpur");<br>
+	Syntax2: create table customers(customer_id int not null auto_increment, name varchar(50) not null, address varchar(150) not null default "janakpur" primary key(customer_id));
+	<li>Foreign Key</li>A FOREIGN KEY is a key used to link two tables together.<br>A FOREIGN KEY is a field (or collection of fields) in one table that refers to the PRIMARY KEY in another table.<br>
+	Syntax: create table orders(order_id int not null auto_increment primary key, order_datetime datetime, amount int, customers_id int foreign key(<abbr title="column name where other table record will show"><mark>customers_id</mark></abbr>) references <abbr title="name of other table"><mark>customers</mark></abbr>(<abbr title="primary key of other table"><mark>customer_id</mark></abbr>) );
+</ul>
+
+<h4>Syntax For Showing Both Tables Data</h4>
+Syntax 2 : select * from customers, orders;<br>
+Syntax 2 : select * from customers, orders where customers.customer_id = orders.customers_id;
+<hr width="25%" align="left">
+
+<h3>All About JOINS CLAUSE</h3>A JOIN clause is used to combine rows from two or more tables, based on related column between them.<br>There are different types of JOINs
+<ul>
+	<li>(INNER)JOIN</li>Returns records that have matching values in both tables<br>Syntax 1 : select * from customers join orders;<br>
+	Syntax 1.1 : select customer_id, name, amount, order_datetime from customers join orders; <br>
+	Syntax 2 : select * from customers join orders on customers.customer_id = orders.customers_id;<br>
+	Syntax 3 : select * from customers inner join orders on customers.customer_id = orders.customers_id;   
+	<li>LEFT(OUTER)JOIN</li>Returns all records from the left table, and the matched records from the right table<br>
+	Syntax: select * from customers left join orders on customers.customer_id = orders.customers_id;<br>
+	<li>RIGHT(OUTER)JOIN</li>Returns all record from the right table, and the matched records form the left table<br>
+	Syntax: select * from customers right join orders on customers.customer_id = orders.customers_id;
+</ul>
+<br><hr><br>
 
 	</body>
 </html>
